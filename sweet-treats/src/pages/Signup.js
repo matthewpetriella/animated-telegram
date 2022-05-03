@@ -23,8 +23,46 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">HI</div>
+    <main>
+      <div className="col-12 col-md-6">
+        <div className="">
+          <h4 className="">Sign Up</h4>
+          <div className="">
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className=""
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className=""
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className=""
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className="" type="submit">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

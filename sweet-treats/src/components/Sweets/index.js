@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Cookies from "../../pages/Cookies";
 
 const Sweets = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState();
-
   const [desserts] = useState([
     {
       name: "Cookies",
     },
     {
-      name: " Pastries",
+      name: "Pastries",
     },
     {
       name: "Cakes",
@@ -22,7 +21,10 @@ const Sweets = () => {
         {desserts.map((name, i) => (
           <>
             <div className="projects">
-              <h1 className="img-thumbnail p-2">{name.name}</h1>
+              <Link to={`/${name.name}`} className="p-2">
+                {" "}
+                {name.name}
+              </Link>
             </div>
           </>
         ))}

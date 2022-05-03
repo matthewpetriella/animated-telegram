@@ -1,6 +1,6 @@
 import React from "react";
 
-const ViewCart = (props) => {
+const ViewCart = () => {
   return <div> HI</div>;
 };
 

@@ -11,6 +11,7 @@ import NoMatch from "./pages/NoMatch";
 import ViewCart from "./pages/ViewCart";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import Cookies from "./pages/Cookies";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/ViewCart" element={<ViewCart />} />
+            <Route path="/Cookies" element={<Cookies />} />
           </Routes>
         </div>
         <Footer />

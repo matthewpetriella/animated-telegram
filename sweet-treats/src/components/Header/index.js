@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "../../utils/auth";
 
 import Home from "../../pages/Home";
