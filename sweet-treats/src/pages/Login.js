@@ -26,7 +26,32 @@ const Login = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div> HI</div>
+      <div>
+        <div>
+          <h4>Login</h4>
+          <div>
+            <form onSubmit={handleFormSubmit}>
+              <input
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
-import SingleThought from "./pages/SingleThought";
+import ViewCart from "./pages/ViewCart";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 
@@ -23,7 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/thought" element={<SingleThought />} />
+            <Route path="/ViewCart" element={<ViewCart />} />
           </Routes>
         </div>
         <Footer />
