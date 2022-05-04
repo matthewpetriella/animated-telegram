@@ -5,8 +5,6 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type User {
     _id: ID
-    firstName: String
-    lastName: String
     email: String
     orders: [Order]
   }
@@ -14,11 +12,10 @@ const typeDefs = gql`
   type Product {
     _id: ID
     name: String
-    description: String
     image: String
     price: Float
     quantity: Int
-    Category: [Category]
+    Category: Category
   }
 
   type Category {
@@ -32,7 +29,7 @@ const typeDefs = gql`
 
   type Order {
     _id: ID
-    purchaseDate: Date
+    purchaseDate: String
     products: [Product]
   }
 
@@ -46,8 +43,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addUser(firstName: String, lastName: String, email: String, password: String): User
+    login(email: String!, password: String!): Auth
+    addUser(email: String, password: String): User
     addOrder(products: [ID]!): Order
     updateProduct(_id: ID!, quantity: Int!): Product
   }

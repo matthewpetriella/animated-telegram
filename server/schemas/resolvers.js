@@ -56,7 +56,6 @@ const resolvers = {
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
-          description: products[i].description,
           images: [`${url}/images/${products[i].image}`]
         });
 
