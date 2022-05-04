@@ -16,67 +16,67 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
-      image: 'cookie-tin.jpg',
+      name: 'Sugar Cookies',
+      image: 'sugar cook.png',
       category: categories[0]._id,
       price: 2.99,
       quantity: 500
     },
     {
-      name: 'Canned Coffee',
-      image: 'canned-coffee.jpg',
+      name: 'Snickerdoodle Cookies',
+      image: 'vanilla cook.png',
       category: categories[0]._id,
-      price: 1.99,
+      price: 2.99,
       quantity: 500
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+      name: 'Chocolate Chip Cookies',
+      image: 'choc cook.png',
+      category: categories[0]._id,
+      price: 2.99,
+      quantity: 500
     },
     {
-      name: 'Handmade Soap',
+      name: 'Chocolate Cake',
       category: categories[1]._id,
-      image: 'soap.jpg',
+      image: 'choc cake.png',
       price: 3.99,
-      quantity: 50
+      quantity: 100
     },
     {
-      name: 'Set of Wooden Spoons',
+      name: 'Red Velvet Cake',
       category: categories[1]._id,
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
+      image: 'red cake.png',
+      price: 3.99,
       quantity: 100
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
-    },
-    {
-      name: 'Tablet',
-      category: categories[2]._id,
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
-    },
-    {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
-      image: 'bedtime-book.jpg',
-      price: 9.99,
+      name: 'Lemon Poppy Seed Cake',
+      category: categories[1]._id,
+      image: 'yellow cake.png',
+      price: 3.99,
       quantity: 100
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
+      name: 'Blueberry Swirl Donut',
+      category: categories[2]._id,
+      image: 'blue donut.jpeg',
+      price: 2.99,
+      quantity: 100
+    },
+    {
+      name: 'Chocolate Sprinkle Donut',
+      category: categories[2]._id,
+      image: 'choc donut.jpeg',
+      price: 2.99,
+      quantity: 100
+    },
+    {
+      name: 'Pink Sprinkle Donut',
+      category: categories[2]._id,
+      image: 'pink donut.jpeg',
+      price: 2.99,
+      quantity: 100
     }
   ]);
 
