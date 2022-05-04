@@ -5,43 +5,51 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type User {
     _id: ID
-    username: String
+    firstName: String
+    lastName: String
     email: String
-    friendCount: Int
-    thoughts: [Thought]
-    friends: [User]
+    orders: [Order]
   }
 
-  type Thought {
+  type Product {
     _id: ID
-    thoughtText: String
-    createdAt: String
-    username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    name: String
+    description: String
+    image: String
+    price: Float
+    quantity: Int
+    Category: [Category]
   }
 
-  type Reaction {
+  type Category {
     _id: ID
-    reactionBody: String
-    createdAt: String
-    username: String
+    name: String
+  }
+
+  type Checkout {
+    session: ID
+  }
+
+  type Order {
+    _id: ID
+    purchaseDate: Date
+    products: [Product]
   }
 
   type Query {
-    me: User
-    users: [User]
-    user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(_id: ID!): Thought
+    categories: [Category]
+    products(category: ID, name: String): [Product]
+    product(_id: ID!): Product
+    user: User
+    order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
-    addReaction(thoughtId: ID!, reactionBody: String!): Thought
-    addFriend(friendId: ID!): User
+    login(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String, lastName: String, email: String, password: String): User
+    addOrder(products: [ID]!): Order
+    updateProduct(_id: ID!, quantity: Int!): Product
   }
 
   type Auth {
