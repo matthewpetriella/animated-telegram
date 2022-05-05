@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -9,8 +6,6 @@ const Signup = () => {
     email: "",
     password: "",
   });
-
-  const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -22,30 +17,20 @@ const Signup = () => {
     });
   };
 
-  // submit form (notice the async!)
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    // use try/catch instead of promises to handle errors
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
   };
+
   return (
-    <main className="flex-row justify-center mb-4">
+    <main>
       <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Sign Up</h4>
-          <div className="card-body">
+        <div className="">
+          <h4 className="">Sign Up</h4>
+          <div className="">
             <form onSubmit={handleFormSubmit}>
               <input
-                className="form-input"
+                className=""
                 placeholder="Your username"
                 name="username"
                 type="username"
@@ -54,7 +39,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className="form-input"
+                className=""
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -63,7 +48,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <input
-                className="form-input"
+                className=""
                 placeholder="******"
                 name="password"
                 type="password"
@@ -71,11 +56,10 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button className="" type="submit">
                 Submit
               </button>
             </form>
-            {error && <div>Sign up failed</div>}
           </div>
         </div>
       </div>
