@@ -43,7 +43,7 @@ const Cookies = () => {
       <div className="flex-row">
         {cookieList.map((image, i) => (
           <>
-            <div className="projects">
+            <div className="product-title">
               <h3 className="img-thumbnail p-2 ">{image.name}</h3>
               <img
                 src={`../assets/cookies/${image.imgid}.jpg`}

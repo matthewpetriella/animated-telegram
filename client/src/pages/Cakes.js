@@ -38,7 +38,7 @@ const Cakes = () => {
       {isModalOpen && (
         <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
       )}
-      <h1 className="align-item-center"> Cakes</h1>
+      <h1 className="product-title"> Cakes</h1>
       <div className="flex-row">
         {cakeList.map((image, i) => (
           <div className="projects">

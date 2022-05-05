@@ -39,23 +39,21 @@ const Donut = () => {
       {isModalOpen && (
         <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
       )}
-      <h1 className="align-item-center"> Donuts</h1>
-      <div className="flex-row">
+      <h1 className="product-title"> Donuts</h1>
+      <div>
         {donutList.map((image, i) => (
-          <>
-            <div className="projects">
-              <h1 className="img-thumbnail p-2 ">{image.name}</h1>
-              <img
-                src={`../assets/donuts/${image.imgid}.jpg`}
-                alt={image.name}
-                className="img-thumbnail mx-2 p-2 "
-                onClick={() => toggleModal(image, i)}
-                key={image.name}
-              />
-              <p> {image.Price}</p>
-              <p> {image.Stock}</p>
-            </div>
-          </>
+          <div className="products">
+            <h3 className="img-thumbnail">{image.name}</h3>
+            <img
+              src={`../assets/donuts/${image.imgid}.jpg`}
+              alt={image.name}
+              className="img-thumbnail"
+              onClick={() => toggleModal(image, i)}
+              key={image.name}
+            />
+            <p> {image.Price}</p>
+            <p> {image.Stock}</p>
+          </div>
         ))}
       </div>
     </div>
