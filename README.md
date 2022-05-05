@@ -16,7 +16,7 @@ As a baker and small business owner, I want a website where customers are able t
 
 ## Project Criteria
 For this project, our group was tasked use everything learned over the last 6 months of UI/UX Bootcamp to demonstrate the skills we've learned. This application must use the following technologies:
-* Perfoman JavaScript
+* Perfomant JavaScript
 * NoSQL Databases
 * React single-page applications
 * GraphQL APIs
