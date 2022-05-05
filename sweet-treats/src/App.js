@@ -12,6 +12,8 @@ import ViewCart from "./pages/ViewCart";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Cookies from "./pages/Cookies";
+import Donut from "./pages/Donuts";
+import Cakes from "./pages/Cakes";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/ViewCart" element={<ViewCart />} />
             <Route path="/Cookies" element={<Cookies />} />
+            <Route path="/Donuts" element={<Donut />} />
+            <Route path="/Cakes" element={<Cakes />} />
           </Routes>
         </div>
         <Footer />

@@ -8,7 +8,7 @@ const Sweets = () => {
       name: "Cookies",
     },
     {
-      name: "Pastries",
+      name: "Donuts",
     },
     {
       name: "Cakes",

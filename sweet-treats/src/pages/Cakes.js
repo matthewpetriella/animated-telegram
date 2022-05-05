@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Modal from "../components/Modal";
 
-const Cookies = () => {
+const Cakes = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState();
 
-  const [cookieList] = useState([
+  const [cakeList] = useState([
     {
       name: "Chocolate Chip",
       Price: "$" + 2.0,
@@ -36,9 +36,9 @@ const Cookies = () => {
       {isModalOpen && (
         <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
       )}
-      <h1 className="align-item-center"> Cookies</h1>
+      <h1 className="align-item-center"> Donuts</h1>
       <div className="flex-row">
-        {cookieList.map((image, i) => (
+        {cakeList.map((image, i) => (
           <>
             <div className="projects">
               <h1 className="img-thumbnail p-2 ">{image.name}</h1>
@@ -59,4 +59,4 @@ const Cookies = () => {
   );
 };
 
-export default Cookies;
+export default Cakes;
