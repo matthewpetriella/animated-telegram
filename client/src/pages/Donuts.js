@@ -7,22 +7,25 @@ const Donut = () => {
 
   const [donutList] = useState([
     {
-      name: "Chocolate Chip",
+      name: "Blue Donut",
+      category: "donuts",
       Price: "$" + 2.0,
       Stock: 150,
       imgid: 0,
     },
     {
-      name: "Oatmeal Raisin",
+      name: "Chocolate Donut",
+      category: "donuts",
       Price: "$" + 2.0,
       Stock: 110,
       imgid: 1,
     },
     {
-      name: "Peanut Butter",
+      name: "Pink Donut",
+      category: "donuts",
       Price: "$" + 2.0,
       Stock: 24,
-      imgid: 3,
+      imgid: 2,
     },
   ]);
 
@@ -43,7 +46,7 @@ const Donut = () => {
             <div className="projects">
               <h1 className="img-thumbnail p-2 ">{image.name}</h1>
               <img
-                src={`../assets/cookies/${image.imgid}.jpg`}
+                src={`../assets/donuts/${image.imgid}.jpg`}
                 alt={image.name}
                 className="img-thumbnail mx-2 p-2 "
                 onClick={() => toggleModal(image, i)}

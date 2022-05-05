@@ -2,29 +2,31 @@ import React, { useState } from "react";
 import Modal from "../components/Modal";
 
 const Cakes = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState();
-
   const [cakeList] = useState([
     {
-      name: "Chocolate Chip",
+      name: "Chocolate Cake",
+      category: "cake",
       Price: "$" + 2.0,
       Stock: 150,
       imgid: 0,
     },
     {
-      name: "Oatmeal Raisin",
+      name: "Red Velvet",
+      category: "cake",
       Price: "$" + 2.0,
       Stock: 110,
       imgid: 1,
     },
     {
-      name: "Peanut Butter",
+      name: "Yellow Cake",
+      category: "cake",
       Price: "$" + 2.0,
       Stock: 24,
-      imgid: 3,
+      imgid: 2,
     },
   ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
 
   const toggleModal = (image, i) => {
     setCurrentPhoto({ ...image, index: i });
@@ -36,23 +38,21 @@ const Cakes = () => {
       {isModalOpen && (
         <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
       )}
-      <h1 className="align-item-center"> Donuts</h1>
+      <h1 className="align-item-center"> Cakes</h1>
       <div className="flex-row">
         {cakeList.map((image, i) => (
-          <>
-            <div className="projects">
-              <h1 className="img-thumbnail p-2 ">{image.name}</h1>
-              <img
-                src={`../assets/cookies/${image.imgid}.jpg`}
-                alt={image.name}
-                className="img-thumbnail mx-2 p-2 "
-                onClick={() => toggleModal(image, i)}
-                key={image.name}
-              />
-              <p> {image.Price}</p>
-              <p> {image.Stock}</p>
-            </div>
-          </>
+          <div className="projects">
+            <h1 className="img-thumbnail m-1 p-2 ">{image.name}</h1>
+            <img
+              src={`../assets/cake/${image.imgid}.jpg`}
+              alt={image.name}
+              className="img-thumbnail mx-2 p-2 "
+              onClick={() => toggleModal(image, i)}
+              key={image.name}
+            />
+            <p> {image.Price}</p>
+            <p> {image.Stock}</p>
+          </div>
         ))}
       </div>
     </div>

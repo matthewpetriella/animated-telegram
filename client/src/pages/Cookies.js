@@ -8,21 +8,24 @@ const Cookies = () => {
   const [cookieList] = useState([
     {
       name: "Chocolate Chip",
+      category: "cookies",
       Price: "$" + 2.0,
       Stock: 150,
       imgid: 0,
     },
     {
-      name: "Oatmeal Raisin",
+      name: "Sugar Cookie",
+      category: "cookies",
       Price: "$" + 2.0,
       Stock: 110,
       imgid: 1,
     },
     {
-      name: "Peanut Butter",
+      name: "Vanilla Cookie",
+      category: "cookies",
       Price: "$" + 2.0,
       Stock: 24,
-      imgid: 3,
+      imgid: 2,
     },
   ]);
 
@@ -41,7 +44,7 @@ const Cookies = () => {
         {cookieList.map((image, i) => (
           <>
             <div className="projects">
-              <h1 className="img-thumbnail p-2 ">{image.name}</h1>
+              <h3 className="img-thumbnail p-2 ">{image.name}</h3>
               <img
                 src={`../assets/cookies/${image.imgid}.jpg`}
                 alt={image.name}

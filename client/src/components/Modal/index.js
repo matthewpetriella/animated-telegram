@@ -1,14 +1,14 @@
 import React from "react";
 
 const Modal = ({ onClose, currentPhoto }) => {
-  const { name, price, stock, imgid } = currentPhoto;
+  const { name, price, stock, imgid, category } = currentPhoto;
 
   return (
     <div className="modalBackdrop">
       <div className="modalContainer">
         <h3 className="modalTitle">{name} </h3>
         <img
-          src={`../assets/cookies/${imgid}.jpg`}
+          src={`../assets/${category}/${imgid}.jpg`}
           alt="current category"
           className="img-thumbnail"
         />
