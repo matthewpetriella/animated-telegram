@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Modal = ({ onClose, currentPhoto }) => {
   const { name, price, stock, imgid, category } = currentPhoto;
+  const [addCart, setAddItem] = useState(false);
 
   return (
     <div className="modalBackdrop">
@@ -14,6 +15,10 @@ const Modal = ({ onClose, currentPhoto }) => {
         />
         <p className="modal-description">{stock}</p>
         <p> {price}</p>
+        <button type="button" onClick="addItem()">
+          {" "}
+          Add to Cart{" "}
+        </button>
         <button type="button" onClick={onClose}>
           Close this modal
         </button>

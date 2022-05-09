@@ -18,14 +18,12 @@ const Sweets = () => {
     <div>
       <div className="flex-row">
         {desserts.map((name, i) => (
-          <>
-            <div className="projects">
-              <Link to={`/${name.name}`} className="p-2">
-                {" "}
-                {name.name}
-              </Link>
-            </div>
-          </>
+          <div className="projects" key={i}>
+            <Link to={`/${name.name}`} className="p-2">
+              {" "}
+              {name.name}
+            </Link>
+          </div>
         ))}
       </div>
     </div>

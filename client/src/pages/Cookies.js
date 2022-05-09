@@ -42,20 +42,18 @@ const Cookies = () => {
       <h1 className="align-item-center"> Cookies</h1>
       <div className="flex-row">
         {cookieList.map((image, i) => (
-          <>
-            <div className="product-title">
-              <h3 className="img-thumbnail p-2 ">{image.name}</h3>
-              <img
-                src={`../assets/cookies/${image.imgid}.jpg`}
-                alt={image.name}
-                className="img-thumbnail mx-2 p-2 "
-                onClick={() => toggleModal(image, i)}
-                key={image.name}
-              />
-              <p> {image.Price}</p>
-              <p> {image.Stock}</p>
-            </div>
-          </>
+          <div className="product-title" key={i}>
+            <h3 className="img-thumbnail p-2 ">{image.name}</h3>
+            <img
+              src={`../assets/cookies/${image.imgid}.jpg`}
+              alt={image.name}
+              className="img-thumbnail mx-2 p-2 "
+              onClick={() => toggleModal(image, i)}
+              key={image.name}
+            />
+            <p> {image.Price}</p>
+            <p> {image.Stock}</p>
+          </div>
         ))}
       </div>
     </div>
