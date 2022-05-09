@@ -29,10 +29,12 @@ const Donut = () => {
     },
   ]);
 
-  const toggleModal = (image, i) => {
+  function toggleModal(image, i) {
     setCurrentPhoto({ ...image, index: i });
     setIsModalOpen(!isModalOpen);
-  };
+  }
+
+  function addItem() {}
 
   return (
     <div>
@@ -42,7 +44,7 @@ const Donut = () => {
       <h1 className="product-title"> Donuts</h1>
       <div>
         {donutList.map((image, i) => (
-          <div className="products">
+          <div className="products" key={i}>
             <h3 className="img-thumbnail">{image.name}</h3>
             <img
               src={`../assets/donuts/${image.imgid}.jpg`}
@@ -53,6 +55,7 @@ const Donut = () => {
             />
             <p> {image.Price}</p>
             <p> {image.Stock}</p>
+            <button onClick={addItem}> Add to cart</button>
           </div>
         ))}
       </div>

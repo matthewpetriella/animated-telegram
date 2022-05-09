@@ -1,59 +1,17 @@
 import { gql } from "@apollo/client";
 
-//export const QUERY_THOUGHTS = gql`
-  //query thoughts($username: String) {
-    //thoughts(username: $username) {
-     // _id
-      //thoughtText
-      //createdAt
-      //username
-      //reactionCount
-      //reactions {
-        //_id
-       // createdAt
-       // username
-        //reactionBody
-      //}
-    //}
-  //}
-//`;
-//export const QUERY_THOUGHT = gql`
-  //query thought($id: ID!) {
-    //thought(_id: $id) {
-     // _id
-      //thoughtText
-      //createdAt
-      //username
-      //reactionCount
-      //reactions {
-       // _id
-        //createdAt
-        //username
-        //reactionBody
-      //}
-    //}
-  //}
-//`;
-
-export const QUERY_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
+export const QUERY_PRODUCT = gql`
+  query product($_id: ID!) {
+    product(_id: $_id) {
       _id
       name
+      image
       price
       quantity
-      image
-      category {
+      Category {
         _id
+        name
       }
-    }
-  }
-`;
-
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
     }
   }
 `;
