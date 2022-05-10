@@ -1,7 +1,7 @@
 # Sweet Treats E-Commerce Site
 
 ## Description
-Sweet Treats is an online shop where lovers of baked goods can peruse through vairous desserts, shop for desserts or create custom dessert orders with the Sweet Treats bakery for their next big event. New shoppers are able to signup while returning customers can simply login with an email & password to place orders. 
+Sweet Treats is an online shop where lovers of baked goods can peruse through vairous desserts, shop for desserts or create custom dessert orders with the Sweet Treats bakery for their next big event. New shoppers are able to signup while returning customers can simply login with an email & password to place orders. The customer's cart can be viewed and updated easily and when a customer is signed into the site, they are able to securely checkout using Stripe. 
 
 ## Table of Contents
 [User Story](#user-story)
@@ -39,9 +39,10 @@ And in addition should fulfill these other requirements:
 * Heroku
 
 ## Deployed Application
-URL:
+URL: https://thawing-tor-90968.herokuapp.com/
 
 ## Screenshots
+![Screenshot](client%5Cpublic%5Cimages%5Cscreenshot-SweetTreats.JPG)
 
 ## Contributions/Questions
 Contributions to this project were made by:
