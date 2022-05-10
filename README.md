@@ -42,7 +42,7 @@ And in addition should fulfill these other requirements:
 URL: https://thawing-tor-90968.herokuapp.com/
 
 ## Screenshots
-![Screenshot](client%5Cpublic%5Cimages%5Cscreenshot-SweetTreats.JPG)
+![screenshot-SweetTreats](https://user-images.githubusercontent.com/93881224/167740628-584908eb-2631-4958-9266-31d4e3f10264.JPG)
 
 ## Contributions/Questions
 Contributions to this project were made by:
