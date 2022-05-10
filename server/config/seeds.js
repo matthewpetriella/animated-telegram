@@ -21,7 +21,6 @@ db.once("open", async () => {
       category: categories[0]._id,
       price: 2.99,
       quantity: 500,
-      Category: "Cookies",
     },
     {
       name: "Snickerdoodle Cookies",
@@ -29,7 +28,6 @@ db.once("open", async () => {
       category: categories[0]._id,
       price: 2.99,
       quantity: 500,
-      Category: "Cookies",
     },
     {
       name: "Chocolate Chip Cookies",
@@ -37,7 +35,6 @@ db.once("open", async () => {
       category: categories[0]._id,
       price: 2.99,
       quantity: 500,
-      Category: "Cookies",
     },
     {
       name: "Chocolate Cake",
@@ -45,7 +42,6 @@ db.once("open", async () => {
       image: "choc cake.png",
       price: 3.99,
       quantity: 100,
-      Category: "Cake",
     },
     {
       name: "Red Velvet Cake",
@@ -53,7 +49,6 @@ db.once("open", async () => {
       image: "red cake.png",
       price: 3.99,
       quantity: 100,
-      Category: "Cake",
     },
     {
       name: "Lemon Poppy Seed Cake",
@@ -61,7 +56,6 @@ db.once("open", async () => {
       image: "yellow cake.png",
       price: 3.99,
       quantity: 100,
-      Category: "Cake",
     },
     {
       name: "Blueberry Swirl Donut",
@@ -69,7 +63,6 @@ db.once("open", async () => {
       image: "blue donut.jpeg",
       price: 2.99,
       quantity: 100,
-      Category: "Donut",
     },
     {
       name: "Chocolate Sprinkle Donut",
@@ -77,7 +70,6 @@ db.once("open", async () => {
       image: "choc donut.jpeg",
       price: 2.99,
       quantity: 100,
-      Category: "Donut",
     },
     {
       name: "Pink Sprinkle Donut",
@@ -85,7 +77,6 @@ db.once("open", async () => {
       image: "pink donut.jpeg",
       price: 2.99,
       quantity: 100,
-      Category: "Donut",
     },
   ]);
 

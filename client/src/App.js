@@ -1,15 +1,21 @@
+// I,porting React and Apollo packages
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
+// Importing components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import { StoreProvider } from "./utils/GlobalState";
+
+// Importing pages
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ViewCart from "./pages/ViewCart";
@@ -19,12 +25,24 @@ import Cookies from "./pages/Cookies";
 import Donut from "./pages/Donuts";
 import Cakes from "./pages/Cakes";
 
+// Connecting to graphql
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+// creating graphql and apollo connection
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -34,22 +52,24 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-
           <div className="container">
-            <Switch>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/viewCart" element={<ViewCart />} />
-              <Route path="/cookies" element={<Cookies />} />
-              <Route path="/donuts" element={<Donut />} />
-              <Route path="/cakes" element={<Cakes />} />
-            </Switch>
+            <StoreProvider>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/profile" element={<Profile />} />
+                {/* <Route path="/viewCart" element={<ViewCart />} /> */}
+                <Route path="/cookies" element={<Cookies />} />
+                <Route path="/donuts" element={<Donut />} />
+                <Route path="/cakes" element={<Cakes />} />
+              </Routes>
+            </StoreProvider>
           </div>
-          <Footer />
         </div>
       </Router>
+
+      <Footer />
     </ApolloProvider>
   );
 }
