@@ -1,31 +1,22 @@
-// I,porting React and Apollo packages
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
-  ApolloProvider,
   ApolloClient,
   InMemoryCache,
+  ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// Importing components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-import { StoreProvider } from "./utils/GlobalState";
-
-// Importing pages
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
-import ViewCart from "./pages/ViewCart";
-import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
-import Cookies from "./pages/Cookies";
-import Donut from "./pages/Donuts";
-import Cakes from "./pages/Cakes";
+import Nav from "./components/Nav";
+import { StoreProvider } from "./utils/GlobalState";
+import OrderHistory from "./pages/OrderHistory";
 
-// Connecting to graphql
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -40,7 +31,6 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-// creating graphql and apollo connection
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -50,26 +40,20 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-            <StoreProvider>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/profile" element={<Profile />} />
-                {/* <Route path="/viewCart" element={<ViewCart />} /> */}
-                <Route path="/cookies" element={<Cookies />} />
-                <Route path="/donuts" element={<Donut />} />
-                <Route path="/cakes" element={<Cakes />} />
-              </Routes>
-            </StoreProvider>
-          </div>
+        <div>
+          <StoreProvider>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/orderHistory" element={<OrderHistory />} />
+              <Route path="/products/:id" element={<Detail />} />
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+          </StoreProvider>
         </div>
       </Router>
-
-      <Footer />
     </ApolloProvider>
   );
 }

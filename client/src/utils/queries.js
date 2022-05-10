@@ -14,7 +14,7 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 `;
-export const QUERY_PRODUCT = gql`erk
+export const QUERY_PRODUCT = gql`
   query product($_id: ID!) {
     product(_id: $_id) {
       _id

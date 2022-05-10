@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
+import Cart from "../components/Cart";
 
 const Home = () => {
   return (
-    <main>
-      <div className="flex-row justify-space-between">
-        <div className="col-12 mb-3">
-          <CategoryMenu />
-        </div>
-      </div>
-    </main>
+    <div className="container">
+      <CategoryMenu />
+      <ProductList />
+      <Cart />
+    </div>
   );
 };
 
