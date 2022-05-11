@@ -4,12 +4,17 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 
+// Creating components function
 function Signup(props) {
+  // Setting th intial state for the form to be blank
   const [formState, setFormState] = useState({ email: "", password: "" });
+
   const [addUser] = useMutation(ADD_USER);
 
+  // creating a function to handle the form submit.
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    // setting the variables for the user model
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -18,6 +23,7 @@ function Signup(props) {
         lastName: formState.lastName,
       },
     });
+
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };

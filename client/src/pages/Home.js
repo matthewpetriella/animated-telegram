@@ -6,6 +6,7 @@ import Cart from "../components/Cart";
 const Home = () => {
   return (
     <div className="container">
+      {/* rendering CategoryMenu and ProductLis on home page */}
       <CategoryMenu />
       <ProductList />
       <Cart />
