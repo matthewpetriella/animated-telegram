@@ -1,14 +1,34 @@
 /* donut images provided by vectorstock */
 
+/* @font-face {
+  font-family: 'NeonTubes';
+  src: url(./NeonTubes.otf);
+  font-style: normal;
+  font-weight: 100;
+  }
+        
+    #name {
+      font-weight: 100;
+    } */
+
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
-  --light: #fafafa;
-  --dark: #272f32;
+  --primary: #6c4975;
+  --secondary: #f799ec;
+  --tertiary: #c2b2c0;
+  --quatrinary: #dbcad6;
+  --light: #f5e1f1;
+  --dark: #756c75;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+  /*  --primary-color: #0077ff;
+    --secondary-color: #fb7aff;
+    --tertiary-color: #000000;
+    --text-shadow: 1px 1px 2px var(--secondary-color), 0 0 1em var(--primary-color), 0 0 0.2em;
+    --var-color: rgb(43, 46, 255);
+    --clr-neon: hsl(317 100% 54%);
+    --clr-neon-bg: hsl(323 21% 16%);
+    --neon-text-shadow: 1px 1px 2px var(--clr-neon), 0 0 1em var(--clr-neon), 0 0 0.2em; */
 }
 
 * {
