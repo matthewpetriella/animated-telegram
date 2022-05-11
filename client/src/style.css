@@ -11,9 +11,9 @@
 
 :root {
     --primary-color: #0077ff;
-    --secodanry-color: #fb7aff;
+    --secondary-color: #fb7aff;
     --tertiary-color: #000000;
-    --text-shadow: 1px 1px 2px var(--secodanry-color), 0 0 1em var(--primary-color), 0 0 0.2em;
+    --text-shadow: 1px 1px 2px var(--secondary-color), 0 0 1em var(--primary-color), 0 0 0.2em;
     --var-color: rgb(43, 46, 255);
     --clr-neon: hsl(317 100% 54%);
     --clr-neon-bg: hsl(323 21% 16%);
@@ -175,4 +175,11 @@ section {
     padding: 60px;
 }
 
+footer {
+  color: #fb7aff;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  text-shadow: var(--neon-text-shadow);
+}
 
